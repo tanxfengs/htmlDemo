@@ -1,0 +1,233 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F7F2F5;
+    font-family: "Microsoft Yahei", monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+/* 公共button样式 */
+button{
+    outline: none;
+}
+
+button:active{
+    transform: scale(0.95);
+    transition: 0.2s ease-out;
+
+    
+}
+
+
+.container{
+    display: flex;
+    min-width: 700px;
+    min-height: 400px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25);
+}
+
+.form-section{
+    /* background-color: #fff; */
+    width: 50%;
+    position: relative;
+    /* overflow: hidden; */
+
+}
+
+.form-section .form-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.form-section .form-container p{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.form-container .login-icon {
+    display: inline-flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    
+}
+
+.form-container h2{
+    font-weight: bold;
+    letter-spacing: 1em;
+    padding: 10px 0;
+}
+
+.form-container .login-icon a i{
+    
+
+    /* line-height: 40px; */
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    padding: 14px;
+    margin: 10px;
+    color: #000;
+}
+
+.form-container input {
+    border:none;
+    border-radius: 4px;
+    background-color: #EBEBEB;
+    width: 300px;
+    height: 40px;
+    margin: 6px;
+    padding-left: 10px;
+}
+
+.form-container button {
+    padding: 10px 40px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #FF3D3C;
+    cursor: pointer;
+    transition: transform 0.3s  ease-in-out;
+    /* transform: scale(1) */
+
+}
+
+
+
+/* sign in */
+.form-container.sign-in{
+    opacity: 1;
+    z-index: 3;
+}
+
+.form-container.sign-in a{
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+
+
+
+
+.form-container.sign-up{
+    opacity: 0;
+    /* z-index: 1; */
+    transition: ease-out 0.5s;
+
+} 
+
+.container .layer{
+    /* background: #FF3D3C ; */
+    position: relative;
+    width: 50%;
+}
+
+.layer .panel{
+    background: #FF3D3C ;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2px;;
+    /* opacity: 0; */
+
+}
+
+.layer .panel h2{
+    margin: 10px 0;
+}
+
+.layer .panel p {
+    color: #F7F2F5;
+    font-size: 10px;
+    margin: 20px 0;
+
+}
+
+.layer .panel button{
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    background-color: #FF3D3C;
+    /* width: 2rem; */
+    padding: 8px 40px;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+}
+
+
+/* .layer .right-layer.layer-active{
+    z-index: -1;
+    transform: translateX(0);
+} */
+
+.layer .left-layer{
+    opacity: 0; 
+    /* left: 0; */
+    /* top: 0; */
+    /* width: 50%; */
+    transform: translateX(-100%);
+}
+
+.container .layer .right-layer{
+    transition: 0.5s ease-out;
+    transform: translateX(0);
+}
+
+/* animated */
+/* .container.active .sign-up{
+    transition: ease-out 0.5s;
+    z-index: 5;
+} */
+
+.container.active .layer .right-layer{
+    opacity: 0;
+    transition: ease-out 0.5s;
+    transform: translateX(-100%);
+}
+
+
+.container.active .layer .panel.left-layer{
+    opacity: 1;
+    z-index: 6;
+    transition: ease-out 0.5s;
+    transform: translateX(-100%);
+
+}
+
+.container.active .form-container.sign-in{
+    transform: translateX(0%);
+    z-index: -1;
+}
+
+.container.active .form-section .form-container.sign-up{
+    opacity: 1;
+    transition: ease-out 0.5s;
+    transform: translateX(100%);
+    z-index: 8;
+
+}
+
+
+/* 设置了overflow hidden 记得查看位置 否则容易出问题 : 比如此处平移后看不见*/
