@@ -1,0 +1,95 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+
+body,html{
+    font-family: "Microsoft Yahei", sans-serif;
+    box-sizing: border-box;
+    height: 100vh;
+    background-color: #eee;
+}
+
+
+.container{
+    width: 800px;
+    height: 500px;
+    margin: 100px auto;
+    border: 1px solid #333;
+}
+
+.header{
+    display: flex;
+}
+
+.header ul{
+    flex: 4;
+    display: flex;
+}
+
+.header span.add{
+    width: 50px;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+ul li{
+    width: 100px;
+    height: 40px;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    line-height: 40px;
+    position: relative;
+}
+
+ul li span.remove{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top:  0;
+    right: 0;
+    cursor: pointer;
+    background-color: #000;
+    line-height: 20px;
+    border-radius: 0 0 0 20px;
+    font-size: 12px;
+    color:#fff;
+}
+
+
+
+ul li span:first-child input{
+    width: 70px;
+    height: 30px;
+    border:none;
+    text-align: center;
+    background-color: #eee;
+}
+
+li.active{
+    border-bottom: none;
+
+}
+
+.sections{
+    position: relative;
+}
+
+.sections section:not(.sec-active){
+    position: absolute;
+    display: none;
+}
+
+section input{
+    width: 80%;
+    height: 300px;
+    transform: translate(80px, 50px);
+}
